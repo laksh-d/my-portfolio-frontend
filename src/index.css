@@ -1,0 +1,44 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Dark Blue Color Scheme Variables */
+:root {
+  --primary-blue: #2563eb;
+  --secondary-blue: #1e40af;
+  --accent-blue: #3b82f6;
+  --dark-blue: #1e293b;
+  --very-dark-blue: #0f172a;
+  --card-background: #1e293b;
+  --text-light: #e2e8f0;
+  --text-muted: #94a3b8;
+  --border-blue: #334155;
+  --gradient-blue: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  --hover-blue: #3b82f6;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  color: var(--text-light);
+  background-color: var(--very-dark-blue);
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}

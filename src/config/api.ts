@@ -1,11 +1,13 @@
 // API Configuration
 export const API_CONFIG = {
-  BASE_URL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080',
+  BASE_URL: import.meta.env.VITE_API_BASE_URL || 'https://devfolio-backend1.onrender.com',
   ENDPOINTS: {
     HOME: '/home',
     INTRODUCTION: '/introduction',
     SKILLS: '/skills',
     PROJECTS: '/projects',
+    EDUCATION: '/education',
+    EXPERIENCE: '/experience',
     CONTACT_DETAILS: '/contact-details',
     REACHOUT: '/reachout'
   }

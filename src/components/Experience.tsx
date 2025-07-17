@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Experience.css';
+import { apiCall, API_CONFIG } from '../config/api';
 
 interface ExperienceItem {
   company: string;
@@ -18,11 +19,7 @@ const Experience: React.FC = () => {
   useEffect(() => {
     const fetchExperienceData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/experience');
-        if (!response.ok) {
-          throw new Error('Failed to fetch experience data');
-        }
-        const data = await response.json();
+        const data = await apiCall<ExperienceItem[] | ExperienceItem>(API_CONFIG.ENDPOINTS.EXPERIENCE);
         console.log('Experience API Response:', data);
         
         // Handle different response structures

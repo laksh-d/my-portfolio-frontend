@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Education.css';
+import { apiCall, API_CONFIG } from '../config/api';
 
 interface EducationData {
   collegeName: string;
@@ -17,11 +18,7 @@ const Education: React.FC = () => {
   useEffect(() => {
     const fetchEducationData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/education');
-        if (!response.ok) {
-          throw new Error('Failed to fetch education data');
-        }
-        const data: EducationData[] = await response.json();
+        const data = await apiCall<EducationData[]>(API_CONFIG.ENDPOINTS.EDUCATION);
         setEducationData(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An unknown error occurred');

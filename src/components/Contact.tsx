@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Contact.css';
+import { apiCall, API_CONFIG } from '../config/api';
 
 interface ContactData {
   phone: string;
@@ -33,11 +34,7 @@ const Contact: React.FC = () => {
   useEffect(() => {
     const fetchContactData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/contact-details');
-        if (!response.ok) {
-          throw new Error('Failed to fetch contact data');
-        }
-        const data: ContactData = await response.json();
+        const data = await apiCall<ContactData>(API_CONFIG.ENDPOINTS.CONTACT_DETAILS);
         setContactData(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An unknown error occurred');
@@ -64,19 +61,10 @@ const Contact: React.FC = () => {
     setFormSuccess(false);
 
     try {
-      const response = await fetch('http://localhost:8080/reachout', {
+      const result = await apiCall<{message: string}>(API_CONFIG.ENDPOINTS.REACHOUT, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
         body: JSON.stringify(formData),
       });
-
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-      }
-
-      const result = await response.json();
       if (result.message === 'SUCCESS') {
         setFormSuccess(true);
         setFormData({

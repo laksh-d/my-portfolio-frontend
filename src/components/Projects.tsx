@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SkeletonCard } from './Skeleton';
 import { TechIcon } from './TechIcon';
 import './Projects.css';
+import { apiCall, API_CONFIG } from '../config/api';
 
 interface ProjectData {
   name: string;
@@ -18,11 +19,7 @@ const Projects: React.FC = () => {
   useEffect(() => {
     const fetchProjectsData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/projects');
-        if (!response.ok) {
-          throw new Error('Failed to fetch projects data');
-        }
-        const data: ProjectData[] = await response.json();
+        const data = await apiCall<ProjectData[]>(API_CONFIG.ENDPOINTS.PROJECTS);
         setProjectsData(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An unknown error occurred');

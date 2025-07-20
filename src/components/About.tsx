@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { SkeletonText } from './Skeleton';
 import { apiCall, API_CONFIG } from '../config/api';
+import avatarImage from '../assets/avatar.png';
 import './About.css';
 
 interface AboutData {
@@ -64,11 +65,7 @@ const About: React.FC = () => {
             <div className="about-layout">
               <div className="profile-photo">
                 <div className="profile-image">
-                  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="50" fill="var(--gradient-blue)"/>
-                    <circle cx="50" cy="35" r="12" fill="white"/>
-                    <path d="M30 70c0-11 9-20 20-20s20 9 20 20v15H30V70z" fill="white"/>
-                  </svg>
+                  <img src={avatarImage} alt="Professional Avatar" />
                 </div>
               </div>
               <div className="about-text">
@@ -95,11 +92,7 @@ const About: React.FC = () => {
           <div className="about-layout">
             <div className="profile-photo">
               <div className="profile-image">
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="50" cy="50" r="50" fill="var(--gradient-blue)"/>
-                  <circle cx="50" cy="35" r="12" fill="white"/>
-                  <path d="M30 70c0-11 9-20 20-20s20 9 20 20v15H30V70z" fill="white"/>
-                </svg>
+                <img src={avatarImage} alt="Professional Avatar" />
               </div>
             </div>
             <div className="about-text">

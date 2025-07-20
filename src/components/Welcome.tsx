@@ -83,7 +83,7 @@ const Welcome: React.FC = () => {
       <div className="container">
         <div className={`hero ${isVisible ? 'fade-in' : ''}`}>
           <h1 className="hero-title">{welcomeData?.message}</h1>
-          <p className="hero-subtitle">☕ Java | 🚀 Spring Boot | 🔗 REST APIs | 💰 Fintech | 🌍 Cross-Border Payments</p>
+          <p className="hero-subtitle">☕ Java | 🚀 Spring Boot | 🔗 REST APIs | ⚙️ Microservices</p>
           <div className="hero-buttons">
             <button 
               className="btn btn-primary" 

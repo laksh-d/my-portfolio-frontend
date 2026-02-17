@@ -1,6 +1,6 @@
 // API Configuration
 export const API_CONFIG = {
-  BASE_URL: import.meta.env.VITE_API_BASE_URL || 'my-portfolio-backend-dnz7.onrender.com',
+  BASE_URL: import.meta.env.VITE_API_BASE_URL,
   ENDPOINTS: {
     HOME: '/home',
     INTRODUCTION: '/introduction',

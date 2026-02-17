@@ -1,6 +1,6 @@
 // API Configuration
 export const API_CONFIG = {
-  BASE_URL: import.meta.env.VITE_API_BASE_URL,
+  BASE_URL: import.meta.env.VITE_API_BASE_URL || 'https://devfolio-backend1.onrender.com',
   ENDPOINTS: {
     HOME: '/home',
     INTRODUCTION: '/introduction',
